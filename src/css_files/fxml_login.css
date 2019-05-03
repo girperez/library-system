@@ -1,0 +1,50 @@
+/*
+ * Empty Stylesheet file.
+ */
+*{
+    dark-primary-color: #303F9F;
+    default-primary-color: #3F51B5;
+    light-primary-color: #C5CAE9;
+    text-primary-color: #FFFFFF;
+    accent-color: #FF5722;
+    primary-text-color: #212121;
+    secondary-text-color: #757575;
+    divider-color: #BDBDBD;
+}
+
+/*login-section*/
+
+.vbox{
+    -fx-background-color: default-primary-color;
+}
+
+.button{
+    -fx-alignment: CENTER;
+    -fx-background-color: accent-color;
+    -fx-text-fill: text-primary-color;
+}
+#signupbtn{
+    -fx-background-color: light-primary-color;
+}
+#signupbtn:pressed{
+    -fx-background-color: text-primary-color;
+}
+.button:hover{
+    -fx-border-color: text-primary-color;
+    -fx-border-width: 3px;
+    -fx-border-radius: 1px;
+}
+.button:pressed{
+    -fx-background-color: text-primary-color;
+}
+
+.label{
+    -fx-text-fill: text-primary-color;
+}
+
+#closeimage{
+    -fx-effect: dropshadow(two-pass-box, black, 3,0.2,1,1);
+}
+#closeimage:hover{
+    -fx-effect: dropshadow(two-pass-box, black, 5,0.2,1,1);
+}

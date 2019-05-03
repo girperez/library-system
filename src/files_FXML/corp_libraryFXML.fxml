@@ -1,0 +1,395 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ButtonBar?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.FlowPane?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+
+<AnchorPane id="AnchorPane" fx:id="rootpane" prefHeight="900.0" prefWidth="1600.0" stylesheets="@../css_files/theme_one_library.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corp_library.FXML_corp_libraryController">
+   <children>
+      <BorderPane fx:id="mainpane" stylesheets="@../css_files/theme_one_library.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <left>
+            <AnchorPane prefHeight="900.0" prefWidth="300.0" styleClass="leftpane" BorderPane.alignment="CENTER">
+               <children>
+                  <VBox alignment="CENTER" layoutX="4.0" layoutY="4.0" prefHeight="268.0" prefWidth="294.0" spacing="20.0" translateZ="10.0" AnchorPane.leftAnchor="3.0" AnchorPane.rightAnchor="3.0" AnchorPane.topAnchor="3.0">
+                     <children>
+                        <Circle fx:id="avatar" fill="#1f93ff" radius="58.0" stroke="BLACK" strokeType="INSIDE" styleClass="leftpane-avatar" />
+                        <Label fx:id="accountlabel" styleClass="leftpane-avatar-font" text="User Account" textAlignment="CENTER" />
+                     </children>
+                  </VBox>
+                  <Separator layoutX="25.0" layoutY="277.0" prefHeight="0.0" prefWidth="252.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="24.0" />
+                  <VBox alignment="CENTER" layoutX="2.0" layoutY="327.0" spacing="5.0" AnchorPane.bottomAnchor="428.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="326.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="leftpane-button-root">
+                           <children>
+                              <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/book-white.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="booksButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#booksButtonClicked" prefHeight="45.0" prefWidth="190.0" styleClass="leftpane-buttons" text="Books" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="45.0" prefWidth="247.0" styleClass="leftpane-button-root">
+                           <children>
+                              <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true" translateX="3.0">
+                                 <image>
+                                    <Image url="@../images/avatar-white.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="membersButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#membersButtonClicked" prefHeight="45.0" prefWidth="200.0" styleClass="leftpane-buttons" text="Members" />
+                           </children>
+                        </HBox>
+                        <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" styleClass="leftpane-button-root">
+                           <children>
+                              <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@../images/return-white.png" />
+                                 </image>
+                              </ImageView>
+                              <Button fx:id="returnsButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#returnsButtonClicked" prefHeight="45.0" prefWidth="190.0" styleClass="leftpane-buttons" text="Returns" />
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox alignment="CENTER" layoutX="1.0" layoutY="842.0" styleClass="leftpane-button-root" AnchorPane.leftAnchor="1.0" AnchorPane.rightAnchor="1.0">
+                     <children>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/logout-white.png" />
+                           </image>
+                        </ImageView>
+                        <Button fx:id="logoutButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onMouseClicked="#logoutClicked" prefHeight="45.0" prefWidth="190.0" styleClass="leftpane-buttons" text="Log out" />
+                     </children>
+                  </HBox>
+               </children>
+            </AnchorPane>
+         </left>
+         <center>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="rightpane" BorderPane.alignment="CENTER">
+               <children>
+                  <AnchorPane fx:id="booksSection" focusTraversable="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane layoutY="280.0" prefHeight="595.0" prefWidth="1260.0" styleClass="books-table" stylesheets="@../css_files/theme_one_library.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                           <content>
+                              <GridPane fx:id="booksGridPane" alignment="CENTER" focusTraversable="true" prefHeight="200.0" prefWidth="1200.0">
+                                <columnConstraints>
+                                  <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="250.0" minWidth="250.0" percentWidth="0.0" prefWidth="250.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="950.0" minWidth="950.0" percentWidth="0.0" prefWidth="950.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" valignment="CENTER" vgrow="NEVER" />
+                                </rowConstraints>
+                                 <children>
+                                    <ImageView fitHeight="192.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/sample.jpg" />
+                                       </image>
+                                    </ImageView>
+                                    <Pane focusTraversable="true" prefHeight="200.0" prefWidth="200.0" styleClass="divider-down" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label layoutX="36.0" layoutY="24.0" text="Book Title: " />
+                                          <Label layoutX="36.0" layoutY="56.0" text="Book ID:" />
+                                          <Label layoutX="36.0" layoutY="90.0" text="Section:" />
+                                          <Label layoutX="214.0" layoutY="24.0" text="Label" />
+                                          <Label layoutX="214.0" layoutY="56.0" text="Label" />
+                                          <Label layoutX="35.0" layoutY="119.0" text="Available Copies:" />
+                                          <Label layoutX="214.0" layoutY="90.0" text="Label" />
+                                          <Label layoutX="214.0" layoutY="119.0" style="-fx-text-fill: red;" text="Label" />
+                                          <Button layoutX="774.0" layoutY="125.0" mnemonicParsing="false" prefHeight="50.0" style="-fx-font-size: 24;" styleClass="books-button-bar" text="Assign Book" textAlignment="CENTER" />
+                                          <TextField layoutX="516.0" layoutY="131.0" promptText="Assign Member ID" translateY="20.0" />
+                                          <Label layoutX="551.0" layoutY="44.0" text="This Book Is Rented!" />
+                                          <Button alignment="CENTER" layoutX="281.0" layoutY="153.0" maxHeight="32.0" maxWidth="32.0" minHeight="32.0" minWidth="32.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="32.0" styleClass="add_button" textAlignment="CENTER" />
+                                          <Label layoutX="36.0" layoutY="158.0" text="Copies:" />
+                                          <Label layoutX="274.0" layoutY="126.0" text="Label" />
+                                          <TextField layoutX="212.0" layoutY="150.0" prefWidth="50.0" />
+                                          <DatePicker layoutX="516.0" layoutY="83.0" prefHeight="38.0" prefWidth="247.0" translateY="30.0" />
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Pane>
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                        <Pane id="banner-books" focusTraversable="true" layoutX="18.0" prefHeight="200.0" prefWidth="1282.0" stylesheets="@../css_files/theme_one_library.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="14.0" style="-fx-font-size: 42; -fx-font-weight: bold;" styleClass="banner-text" text="Books Section" />
+                              <Separator focusTraversable="false" layoutX="48.0" layoutY="77.0" prefHeight="0.0" prefWidth="689.0" />
+                              <TextField id="search-banner" fx:id="searchbooksTF" layoutX="737.0" layoutY="113.0" prefHeight="37.0" prefWidth="310.0" promptText="Search Books" />
+                              <Button id="search_button" layoutX="1054.0" layoutY="112.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#searchbooksButonClicked" prefHeight="50.0" prefWidth="50.0" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" focusTraversable="true" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                            <Button layoutX="57.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#addBookClicked" prefHeight="50.0" style="-fx-font-size: 20;" styleClass="books-button-bar" text="Add Book" textAlignment="CENTER" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="20.0" layoutY="225.0" prefHeight="50.0" prefWidth="1279.0" styleClass="books-section" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <ButtonBar focusTraversable="false" layoutX="349.0" layoutY="5.0" prefHeight="40.0" prefWidth="603.0">
+                                <buttons>
+                                  <Button maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#trhillClicked" styleClass="books-button-bar" text="Thriller" textAlignment="CENTER" />
+                                    <Button fx:id="fantasybuton" maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#fanbutonclicked" styleClass="books-button-bar" text="Fantasy" textAlignment="CENTER" />
+                                    <Button maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#mysteryClicked" styleClass="books-button-bar" text="Mystery" textAlignment="CENTER" />
+                                    <Button maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#horrorClicked" styleClass="books-button-bar" text="Horror" textAlignment="CENTER" />
+                                    <Button maxHeight="40.0" minHeight="40.0" mnemonicParsing="false" onMouseClicked="#romnceClicked" styleClass="books-button-bar" text="Romance" textAlignment="CENTER" />
+                                </buttons>
+                                 <padding>
+                                    <Insets left="5.0" right="5.0" />
+                                 </padding>
+                              </ButtonBar>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="membersSection" focusTraversable="true" layoutX="10.0" layoutY="10.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane focusTraversable="false" layoutY="280.0" prefHeight="595.0" prefWidth="1260.0" styleClass="books-table" stylesheets="@../css_files/theme_one_library.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                           <content>
+                              <GridPane fx:id="membersGridPane" alignment="CENTER" prefHeight="200.0" prefWidth="1200.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="250.0" minWidth="250.0" percentWidth="0.0" prefWidth="250.0" />
+                                    <ColumnConstraints hgrow="SOMETIMES" maxWidth="950.0" minWidth="950.0" percentWidth="0.0" prefWidth="950.0" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" valignment="CENTER" vgrow="NEVER" />
+                                 </rowConstraints>
+                                 <children>
+                                    <Pane prefHeight="200.0" prefWidth="200.0" styleClass="divider-down" GridPane.columnIndex="1">
+                                       <children>
+                                          <Label focusTraversable="false" layoutX="565.0" layoutY="24.0" text="Books in possesion" />
+                                          <Button focusTraversable="false" layoutX="475.0" layoutY="126.0" mnemonicParsing="false" prefHeight="50.0" style="-fx-font-size: 24;" styleClass="buttons-members" text="Edit" textAlignment="CENTER" />
+                                          <ListView layoutX="565.0" layoutY="56.0" prefHeight="120.0" prefWidth="330.0" />
+                                          <VBox alignment="CENTER_LEFT" layoutX="14.0" prefHeight="200.0" spacing="10.0">
+                                             <children>
+                                                <Label text="Member ID :" />
+                                                <Label text="FIrst name :" />
+                                                <Label text="Last name :" />
+                                                <Label text="Contact no. :" />
+                                                <Label text="Email :" />
+                                             </children>
+                                          </VBox>
+                                          <VBox alignment="CENTER_LEFT" layoutX="206.0" prefHeight="200.0" spacing="10.0">
+                                             <children>
+                                                <TextField promptText="member Username" style="-fx-font-size: 12;" />
+                                                <TextField style="-fx-font-size: 12;" />
+                                                <TextField style="-fx-font-size: 12;" />
+                                                <TextField style="-fx-font-size: 12;" />
+                                                <TextField style="-fx-font-size: 12;" />
+                                             </children>
+                                          </VBox>
+                                       </children>
+                                       <padding>
+                                          <Insets right="20.0" />
+                                       </padding>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </Pane>
+                                    <ImageView fitHeight="150.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </GridPane>
+                           </content>
+                        </ScrollPane>
+                        <Pane layoutX="18.0" prefHeight="200.0" prefWidth="1282.0" styleClass="banner-members" stylesheets="@../css_files/theme_one_library.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="14.0" style="-fx-font-size: 42; -fx-font-weight: bold;" styleClass="banner-text" text="Members Section" />
+                              <Separator focusTraversable="false" layoutX="48.0" layoutY="77.0" prefHeight="0.0" prefWidth="689.0" />
+                              <TextField id="search-banner" fx:id="searchmemTF" focusTraversable="false" layoutX="737.0" layoutY="113.0" prefHeight="37.0" prefWidth="310.0" promptText="Search Member" />
+                              <Button id="search_button" fx:id="searchmemBTN" focusTraversable="false" layoutX="1054.0" layoutY="112.0" maxWidth="50.0" minHeight="50.0" minWidth="50.0" mnemonicParsing="false" onMouseClicked="#searchmemClicked" prefHeight="50.0" prefWidth="50.0" styleClass="search-button-member" textAlignment="CENTER">
+                                 <graphic>
+                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="addmemBTN" focusTraversable="false" layoutX="80.0" layoutY="112.0" mnemonicParsing="false" onMouseClicked="#admembtnClicked" prefHeight="50.0" style="-fx-font-size: 20;" styleClass="buttons-members" text="Add Member" textAlignment="CENTER" />
+                           </children>
+                        </Pane>
+                        <Pane layoutX="20.0" layoutY="225.0" prefHeight="50.0" prefWidth="1279.0" styleClass="section-bar-members" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane fx:id="returnsSection" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ScrollPane fx:id="returnsscrollPane" layoutY="280.0" prefHeight="595.0" prefWidth="1260.0" styleClass="books-table-returns" stylesheets="@../css_files/theme_one_library.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="20.0" AnchorPane.rightAnchor="20.0">
+                           <content>
+                              <FlowPane alignment="TOP_CENTER" prefHeight="359.0" prefWidth="1255.0">
+                                 <children>
+                                    <GridPane fx:id="returnsGridpane" alignment="CENTER" prefHeight="200.0" prefWidth="1250.0">
+                                       <columnConstraints>
+                                          <ColumnConstraints halignment="CENTER" hgrow="NEVER" maxWidth="250.0" minWidth="250.0" percentWidth="0.0" prefWidth="250.0" />
+                                          <ColumnConstraints hgrow="SOMETIMES" maxWidth="950.0" minWidth="950.0" percentWidth="0.0" prefWidth="950.0" />
+                                       </columnConstraints>
+                                       <rowConstraints>
+                                          <RowConstraints maxHeight="200.0" minHeight="200.0" prefHeight="200.0" valignment="CENTER" vgrow="NEVER" />
+                                       </rowConstraints>
+                                       <children>
+                                          <ImageView fitHeight="192.0" fitWidth="160.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/sample.jpg" />
+                                             </image>
+                                          </ImageView>
+                                          <Pane prefHeight="200.0" prefWidth="200.0" styleClass="divider-down" GridPane.columnIndex="1">
+                                             <children>
+                                                <VBox alignment="CENTER_LEFT" layoutX="193.0" prefHeight="200.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Label" />
+                                                      <Label text="Label" />
+                                                      <Label text="Label" />
+                                                      <Label text="label" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" layoutX="14.0" prefHeight="200.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Book Title: " />
+                                                      <Label text="Book ID:" />
+                                                      <Label text="Section:" />
+                                                      <Label text="Book Borrower:" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" layoutX="475.0" prefHeight="200.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Date Borrowed:" />
+                                                      <Label text="Date of Return:" />
+                                                      <Label text="Penalty:" />
+                                                   </children>
+                                                </VBox>
+                                                <VBox alignment="CENTER_LEFT" layoutX="664.0" prefHeight="200.0" spacing="10.0">
+                                                   <children>
+                                                      <Label text="Label" />
+                                                      <DatePicker maxWidth="200.0" minHeight="30.0" minWidth="200.0" prefHeight="30.0" prefWidth="200.0" />
+                                                      <Label text="Label" />
+                                                   </children>
+                                                </VBox>
+                                                <CheckBox layoutX="900.0" layoutY="14.0" mnemonicParsing="false" />
+                                             </children>
+                                             <padding>
+                                                <Insets right="20.0" />
+                                             </padding>
+                                             <opaqueInsets>
+                                                <Insets />
+                                             </opaqueInsets>
+                                          </Pane>
+                                       </children>
+                                    </GridPane>
+                                 </children>
+                              </FlowPane>
+                           </content>
+                        </ScrollPane>
+                        <Pane layoutX="18.0" prefHeight="200.0" prefWidth="1282.0" styleClass="banner-returns" stylesheets="@../css_files/theme_one_library.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="1.0">
+                           <children>
+                              <Label layoutX="48.0" layoutY="14.0" style="-fx-font-size: 42; -fx-font-weight: bold;" styleClass="banner-text" text="Returns Section" />
+                              <Separator focusTraversable="false" layoutX="48.0" layoutY="77.0" prefHeight="0.0" prefWidth="689.0" />
+                              <TextField id="search-banner" fx:id="searchreturnsTF" focusTraversable="false" layoutX="737.0" layoutY="113.0" prefHeight="37.0" prefWidth="310.0" promptText="Member ID or Book ID" />
+                              <Button layoutX="1055.0" layoutY="112.0" maxHeight="50.0" mnemonicParsing="false" onMouseClicked="#searchreturnsClicked" prefHeight="50.0" style="-fx-font-size: 20;" styleClass="buttons-returns" text="Search" />
+                              <HBox alignment="CENTER" layoutX="48.0" layoutY="87.0" prefHeight="100.0" prefWidth="493.0" spacing="30.0" styleClass="total-returns">
+                                 <children>
+                                    <Label style="-fx-font-size: 40;" text="Total Penalty" />
+                                    <Separator maxHeight="100.0" maxWidth="1.0" minHeight="100.0" minWidth="1.0" orientation="VERTICAL" prefHeight="100.0" prefWidth="1.0" />
+                                    <Label fx:id="totalsinfoLabel" style="-fx-font-size: 40;" text="\$0.00" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </Pane>
+                        <Pane layoutX="20.0" layoutY="225.0" prefHeight="50.0" prefWidth="1279.0" styleClass="section-bar-returns" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                           <children>
+                              <Button id="search_button" fx:id="backBtn" layoutX="14.0" layoutY="5.0" maxHeight="40.0" maxWidth="40.0" minHeight="40.0" minWidth="40.0" mnemonicParsing="false" onMouseClicked="#backBtnClicked" prefHeight="40.0" prefWidth="40.0" styleClass="back-button-returns" textAlignment="CENTER" visible="false">
+                                 <graphic>
+                                    <ImageView fitHeight="35.0" fitWidth="35.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../images/back_icon.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                              <Button fx:id="paymentBtn" disable="true" layoutX="500.0" layoutY="5.0" mnemonicParsing="false" onMouseClicked="#pymntbtnClicked" prefHeight="40.0" prefWidth="300.0" style="-fx-font-size: 20;" styleClass="buttons-returns" text="PAYMENT" visible="false" />
+                              <Button layoutX="1079.0" layoutY="6.0" mnemonicParsing="false" onMouseClicked="#confrmselectClicked" style="-fx-font-size: 20;" styleClass="buttons-returns" text="Confirm Selection" />
+                           </children>
+                        </Pane>
+                        <Pane fx:id="recietPane" layoutX="398.0" layoutY="275.0" prefHeight="625.0" prefWidth="557.0" styleClass="payment-section" visible="false" AnchorPane.bottomAnchor="1.0">
+                           <children>
+                              <Button fx:id="confrmpayBtn" layoutX="64.0" layoutY="550.0" mnemonicParsing="false" onMouseClicked="#cnfrmpayclicked" prefHeight="61.0" prefWidth="430.0" style="-fx-font-size: 32;" styleClass="buttons-returns" text="CONFIRM PAYMENT" textAlignment="CENTER" />
+                              <GridPane fx:id="recieptGP" layoutX="12.0" layoutY="14.0" prefHeight="530.0" prefWidth="530.0" style="-fx-background-color: white;">
+                                <columnConstraints>
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                </columnConstraints>
+                                <rowConstraints>
+                                  <RowConstraints maxHeight="172.0" minHeight="10.0" prefHeight="121.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="233.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
+                                  <RowConstraints maxHeight="444.0" minHeight="10.0" prefHeight="315.0" vgrow="SOMETIMES" />
+                                    <RowConstraints maxHeight="351.0" minHeight="10.0" prefHeight="58.0" vgrow="SOMETIMES" />
+                                </rowConstraints>
+                                 <children>
+                                    <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="2.0" GridPane.columnSpan="2">
+                                       <children>
+                                          <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 28; -fx-font-weight: bold;" text="Corp Library" textAlignment="CENTER" />
+                                          <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 24;" text="New Land Avenue" textAlignment="CENTER" />
+                                          <Label alignment="CENTER" contentDisplay="CENTER" style="-fx-font-size: 24;" text="Montreal, QC" textAlignment="CENTER" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="20.0" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label alignment="CENTER" style="-fx-font-size: 18;" text="Payment Date:" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <VBox fx:id="leftvboxR" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.rowIndex="2" />
+                                    <VBox fx:id="rightvbocR" alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                       <children>
+                                          <Label fx:id="paydateL" alignment="CENTER" style="-fx-font-size: 18;" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label alignment="CENTER" style="-fx-font-size: 18;" text="Totals:" textAlignment="CENTER" />
+                                       </children>
+                                    </HBox>
+                                    <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" style="-fx-border-width: 1; -fx-border-color: black;" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                       <children>
+                                          <Label fx:id="totalsL" alignment="CENTER" style="-fx-font-size: 18;" text="Label" textAlignment="CENTER" />
+                                       </children>
+                                       <GridPane.margin>
+                                          <Insets bottom="1.0" right="1.0" />
+                                       </GridPane.margin>
+                                    </HBox>
+                                 </children>
+                              </GridPane>
+                           </children>
+                        </Pane>
+                     </children>
+                  </AnchorPane>
+               </children></AnchorPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

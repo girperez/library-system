@@ -1,0 +1,31 @@
+/*
+ * Empty Stylesheet file.
+ */
+
+*{
+    dark-primary-color: #00796B;
+    default-primary-color: #009688;
+    light-primary-color: #B2DFDB;
+    text-primary-color: #FFFFFF;
+    accent-color: #FF5722;
+    primary-text-color: #212121;
+    secondary-text-color: #757575;
+    divider-color: #BDBDBD;
+}
+
+.label{
+    -fx-font-family: "Segoe UI";
+}
+
+.button{
+    -fx-font-family: "Segoe UI";
+    -fx-font-style: Italic;
+    -fx-font-weight: Bold;
+    -fx-background-color: accent-color;
+}
+.button:hover{
+    -fx-background-color: linear-gradient(accent-color, text-primary-color);
+}
+.button:pressed{
+    -fx-background-color: text-primary-color;
+}

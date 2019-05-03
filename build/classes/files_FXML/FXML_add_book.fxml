@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="rootadd" focusTraversable="true" prefHeight="799.0" prefWidth="600.0" styleClass="root" stylesheets="@../css_files/fxml_add_book.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corp_library.FXML_add_bookController">
+   <children>
+      <ChoiceBox fx:id="sectionCB" layoutX="226.0" layoutY="361.0" prefHeight="35.0" prefWidth="345.0" styleClass="addbook-choicebox" />
+      <Label layoutX="25.0" layoutY="357.0" styleClass="addbook-labels" text="Choose Section" />
+      <TextField fx:id="bookcopiesTF" alignment="CENTER" layoutX="176.0" layoutY="290.0" prefHeight="40.0" prefWidth="170.0" styleClass="addbook-textfield" />
+      <Label layoutX="25.0" layoutY="289.0" styleClass="addbook-labels" text="Copies" />
+      <TextField fx:id="booktitleTF" alignment="CENTER" layoutX="176.0" layoutY="212.0" prefHeight="40.0" prefWidth="400.0" promptText="Your Text Here" styleClass="addbook-textfield" />
+      <Label layoutX="25.0" layoutY="209.0" styleClass="addbook-labels" text="Book Title" />
+      <TextField fx:id="bookidTF" alignment="CENTER" layoutX="176.0" layoutY="126.0" prefHeight="40.0" prefWidth="400.0" promptText="Your Text Here" styleClass="addbook-textfield" />
+      <Label layoutX="25.0" layoutY="125.0" styleClass="addbook-labels" text="Book ID" />
+      <HBox alignment="CENTER" prefHeight="90.0" prefWidth="600.0" styleClass="addbook-banner" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="banner" focusTraversable="false" styleClass="addbook-banner-label" text="Register A Book" textAlignment="CENTER">
+               <font>
+                  <Font name="Cooper Black" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="submitBTN" layoutX="76.0" layoutY="679.0" mnemonicParsing="false" onMouseClicked="#submitClicked" prefHeight="50.0" prefWidth="450.0" styleClass="addbook-button" text="Submit" />
+      <Label fx:id="notif" alignment="CENTER" contentDisplay="CENTER" layoutX="62.0" layoutY="618.0" opacity="0.0" prefHeight="43.0" prefWidth="475.0" styleClass="addbook-notif" text="New Book Is in the library!" textAlignment="CENTER" visible="false" />
+      <HBox layoutX="53.0" layoutY="426.0" spacing="50.0">
+         <children>
+            <Button fx:id="imgageBTN" mnemonicParsing="false" onMouseClicked="#chooseClicked" styleClass="choose-image-button" text="Choose Image" />
+            <ImageView fx:id="imageIMV" fitHeight="200.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" styleClass="addbook-image">
+               <image>
+                  <Image url="@../images/image_defaultwhite.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

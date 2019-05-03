@@ -1,0 +1,233 @@
+/* 
+    Created on : 8-Feb-2019, 8:18:25 PM
+    Author     : Gerryl
+*/
+
+*{
+    /*dark*/
+    dark-primary-color: #303F9F; /*indigo*/
+    dark-secondary-color: #1976D2; /*blue*/
+    dark-tertiary-color: #512DA8; /*deep purple*/
+    
+    /*default*/
+    default-primary-color: #3F51B5; /*default-indigo*/
+    default-secondary-color: #2196F3; /*default-blue*/
+    default-tertiary-color: #673AB7; /*default-purple*/
+    
+    /*light*/
+    light-primary-color: #C5CAE9; /*light-indigo*/
+    light-secondary-color: #BBDEFB; /*light-blue*/
+    light-tertiary-color: #D1C4E9; /*light-purple*/
+    
+    /*accent*/
+    accent-color: #009688; /*teal*/
+    secondary-accent-color: #00BCD4; /*cyan*/
+    tertiary-accent-color: #FFA000; /*primary-amber*/
+    fourth-accent-color: #FF5722; /*primary-deeporange*/
+    
+    /*text*/
+    text-primary-color: #FFFFFF; /*white*/
+    primary-text-color: #212121; /*black*/
+    secondary-text-color: #757575; /*darkgrey*/
+    
+    /*divider*/
+    divider-color: #BDBDBD; /*gray*/
+}
+
+/*root*/
+#AnchorPane{
+    -fx-background-color: linear-gradient(dark-primary-color, default-primary-color);
+}
+.separator{
+    -fx-background-color:  divider-color;
+    -fx-border-color: divider-color;
+}
+
+/*books-section*/
+#search_button{
+    -fx-background-color: transparent;
+    -fx-border-color: text-primary-color;
+    -fx-border-radius: 100;
+    -fx-background-radius: 100px;
+}
+#search_button:hover{
+    -fx-background-color: divider-color;
+}
+#search_button:pressed{
+    -fx-background-color: transparent;
+}
+.add_button{
+    -fx-background-image: url(../images/add_icon_.png);
+    -fx-background-repeat: no-repeat;
+    -fx-background-color: accent-color;
+    -fx-background-radius: 100px;
+}
+.add_button:hover{
+    -fx-background-color: secondary-accent-color;
+}
+.add_button:pressed{
+    -fx-background-color: secondary-accent-color;
+}
+#banner-books{
+    -fx-background-color: dark-secondary-color;
+}
+#search-banner{
+    -fx-background-color: transparent;
+    -fx-border-color: text-primary-color;
+    -fx-border-width: 0 0 3 0;
+    -fx-font-size: 24;
+    -fx-font-style: italic;
+}
+#search-banner:focused{
+    -fx-background-color: #BBDEFB;
+}
+.banner-text{
+    -fx-font-style: italic;
+    -fx-text-fill: light-secondary-color;
+}
+.books-table{
+    -fx-background-color: text-primary-color;
+    -fx-font-size: 20;
+}
+.divider-down{
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: divider-color;
+}
+
+.books-section{
+    -fx-background-color: light-secondary-color;
+    -fx-font-size: 16;
+}
+.books-button-bar{
+    -fx-background-color: accent-color;
+    -fx-background-radius: 0;
+    -fx-text-fill: text-primary-color;
+}
+.books-button-bar:hover{
+    -fx-background-color: secondary-accent-color;
+/*    -fx-effect: dropshadow(three-pass-box, primary-text-color, 20,0.1,3,3);*/
+}
+.books-button-bar:pressed{
+    -fx-border-color: text-primary-color;
+    -fx-border-width: 2;
+    -fx-background-color: secondary-accent-color;
+}
+
+/*right-pane-root*/
+.rightpane{
+    -fx-background-color: text-primary-color;
+    -fx-font-family: "Segoe UI";
+}
+/*left-pane-root*/
+.leftpane{
+    -fx-background-color: radial-gradient(radius 160%, dark-secondary-color, dark-primary-color);
+    -fx-border-color: light-primary-color;
+    -fx-font-family: "Segoe UI";
+}
+
+/*left-pane*/
+
+.leftpane-buttons{
+    -fx-background-color: transparent;
+    -fx-text-fill: text-primary-color;
+    -fx-background-radius: 0;
+    -fx-font-size: 24;
+}
+.leftpane-button-root:hover{
+    -fx-background-color: light-secondary-color;
+}
+.leftpane-button-root:pressed{
+    -fx-background-color: secondary-accent-color;
+}
+.leftpane-avatar{
+   
+}
+.leftpane-avatar-font{
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 24;
+    -fx-font-weight: bold;
+    -fx-text-fill: text-primary-color;
+}
+.lefetpane-member-info{
+    -fx-font-family: "Segoe UI";
+    -fx-font-size: 16;
+    -fx-border-width: 0 0 3 0;
+    -fx-border-color: divider-color;
+}
+
+/*members-section*/
+.banner-members{
+    -fx-background-color: default-primary-color;
+}
+.section-bar-members{
+    -fx-background-color: light-primary-color;
+}
+.buttons-members{
+    -fx-background-color: fourth-accent-color;
+    -fx-background-radius: 0;
+    -fx-text-fill: text-primary-color;
+}
+.buttons-members:hover{
+    -fx-background-color: tertiary-accent-color;
+}
+.buttons-members:pressed{
+    -fx-border-color: text-primary-color;
+    -fx-border-width: 2;
+    -fx-background-color: tertiary-accent-color;
+}
+.search-button-member{
+    -fx-background-color: transparent;
+    -fx-border-color: text-primary-color;
+    -fx-border-radius: 100;
+    -fx-background-radius: 100px;
+}
+.search-button-member:hover{
+    -fx-background-color: divider-color;
+}
+.search-button-member:pressed{
+    -fx-background-color: transparent;
+}
+
+/*returns-section*/
+.banner-returns{
+    -fx-background-color: dark-tertiary-color;
+}
+.section-bar-returns{
+    -fx-background-color: light-tertiary-color;
+}
+.buttons-returns{
+    -fx-background-color: tertiary-accent-color;
+    -fx-background-radius: 0;
+    -fx-text-fill: text-primary-color;
+}
+.buttons-returns:hover{
+    -fx-border-color: text-primary-color;
+    -fx-border-width: 2;
+    -fx-background-color: fourth-accent-color;
+}
+.back-button-returns{
+    -fx-background-color: transparent;
+    -fx-border-color: text-primary-color;
+    -fx-border-radius: 100;
+    -fx-background-radius: 100px;
+}
+.back-button-returns:hover{
+    -fx-background-color: divider-color;
+}
+.back-button-returns:pressed{
+    -fx-background-color: transparent;
+}
+.books-table-returns{
+    -fx-background: text-primary-color;
+    -fx-border-color: text-primary-color;
+    -fx-font-size: 20;
+}
+.total-returns{
+    -fx-background-color: light-primary-color;
+}
+.payment-section{
+    -fx-background-color: dark-primary-color;
+    -fx-font-family: "Segoe UI";
+    -fx-effect: dropshadow(three-pass-box, primary-text-color, 20,0.1,3,3);
+    -fx-background-radius: 10px;
+}

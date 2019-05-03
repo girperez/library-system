@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="root" prefHeight="889.0" prefWidth="600.0" styleClass="root" stylesheets="@../css_files/fxml_register_member.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="corp_library.FXML_register_memberController">
+   <children>
+      <VBox layoutX="100.0" layoutY="144.0" prefHeight="601.0" prefWidth="400.0" spacing="5.0" styleClass="content-register" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0">
+         <children>
+            <Label styleClass="content-register-labels" text="First Name" />
+            <TextField fx:id="fnameTF" prefHeight="27.0" prefWidth="600.0" promptText="Your Text Here" styleClass="content-register-text" />
+            <Label styleClass="content-register-labels" text="Last Name" />
+            <TextField fx:id="lnameTF" promptText="Your Text Here" styleClass="content-register-text" />
+            <Label styleClass="content-register-labels" text="Mobile Number" />
+            <TextField fx:id="mobileTF" promptText="Your Text Here" styleClass="content-register-text" />
+            <Label styleClass="content-register-labels" text="E-mail Address" />
+            <TextField fx:id="emailTF" promptText="Your Text Here" styleClass="content-register-text" />
+            <Label styleClass="content-register-labels" text="Username" />
+            <TextField fx:id="userTF" promptText="Your Text Here" styleClass="content-register-text" />
+            <Label styleClass="content-register-labels" text="Password" />
+            <PasswordField fx:id="passTF" styleClass="content-register-text" />
+            <Label styleClass="content-register-labels" text="Confirm Password" />
+            <PasswordField fx:id="confirmpassTF" styleClass="content-register-text" />
+         </children>
+      </VBox>
+      <HBox alignment="CENTER" layoutX="200.0" prefHeight="118.0" prefWidth="600.0" styleClass="banner-register" AnchorPane.bottomAnchor="771.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="registerbanner" styleClass="banner-label" text="Register" textAlignment="CENTER">
+               <font>
+                  <Font name="Cooper Black" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </HBox>
+      <Button fx:id="submitBTN" layoutX="100.0" layoutY="777.0" mnemonicParsing="false" onMouseClicked="#submitclicked" prefHeight="79.0" prefWidth="400.0" styleClass="button-register" text="SUBMIT" />
+      <Label fx:id="popuplabel" alignment="CENTER" contentDisplay="CENTER" layoutX="13.0" layoutY="745.0" opacity="0.0" prefHeight="32.0" prefWidth="567.0" styleClass="content-register-labels" text="Label" textAlignment="CENTER" visible="false" />
+   </children>
+</AnchorPane>
